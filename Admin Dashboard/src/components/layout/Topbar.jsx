@@ -8,14 +8,7 @@ export default function Topbar() {
     return (
         <header className="h-20 bg-card/80 backdrop-blur-xl border-b border-border sticky top-0 z-40 px-8 flex items-center justify-between transition-colors duration-300">
             <div className="flex items-center gap-4 flex-1 max-w-xl">
-                <div className="relative w-full">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                    <input
-                        type="text"
-                        placeholder="Search anything..."
-                        className="w-full pl-10 pr-4 py-2.5 bg-muted/50 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-ring/50 transition-all text-foreground placeholder:text-muted-foreground"
-                    />
-                </div>
+                {/* Search bar removed */}
             </div>
 
             <div className="flex items-center gap-6">

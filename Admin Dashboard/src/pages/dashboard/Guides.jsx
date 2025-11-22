@@ -223,9 +223,9 @@ export default function Guides() {
 
     const getStatusBadge = (status) => {
         switch (status) {
-            case 'approved': return <Badge variant="success">Active</Badge>;
-            case 'pending': return <Badge variant="warning">Pending</Badge>;
-            case 'inactive': return <Badge variant="secondary">Inactive</Badge>;
+            case 'approved': return <Badge className="bg-green-500 hover:bg-green-600">Active</Badge>;
+            case 'pending': return <Badge className="bg-orange-500 hover:bg-orange-600">Pending</Badge>;
+            case 'inactive': return <Badge className="bg-red-500 hover:bg-red-600">Inactive</Badge>;
             default: return <Badge variant="outline">{status}</Badge>;
         }
     };
@@ -246,7 +246,7 @@ export default function Guides() {
             </div>
 
             {/* Stats Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
                 <Card
                     className={`glass-card border-border cursor-pointer transition-all group ${activeTab === 'all' ? 'ring-2 ring-blue-500 bg-blue-500/10' : 'hover:bg-muted/50'}`}
                     onClick={() => scrollToGuides('all')}
@@ -283,17 +283,33 @@ export default function Guides() {
                 </Card>
 
                 <Card
-                    className={`glass-card border-border cursor-pointer transition-all group ${activeTab === 'pending' ? 'ring-2 ring-yellow-500 bg-yellow-500/10' : 'hover:bg-muted/50'}`}
+                    className={`glass-card border-border cursor-pointer transition-all group ${activeTab === 'pending' ? 'ring-2 ring-orange-500 bg-orange-500/10' : 'hover:bg-muted/50'}`}
                     onClick={() => scrollToGuides('pending')}
                 >
                     <CardContent className="p-6 flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <Users className="w-6 h-6 text-yellow-500" />
+                        <div className="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <Users className="w-6 h-6 text-orange-500" />
                         </div>
                         <div>
                             <p className="text-sm text-muted-foreground">Pending Requests</p>
                             <h3 className="text-2xl font-bold text-foreground">{pendingGuides.length}</h3>
-                            <p className="text-xs text-yellow-500 font-medium">Requires action</p>
+                            <p className="text-xs text-orange-500 font-medium">Requires action</p>
+                        </div>
+                    </CardContent>
+                </Card>
+
+                <Card
+                    className={`glass-card border-border cursor-pointer transition-all group ${activeTab === 'inactive' ? 'ring-2 ring-red-500 bg-red-500/10' : 'hover:bg-muted/50'}`}
+                    onClick={() => scrollToGuides('inactive')}
+                >
+                    <CardContent className="p-6 flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <AlertTriangle className="w-6 h-6 text-red-500" />
+                        </div>
+                        <div>
+                            <p className="text-sm text-muted-foreground">Inactive Guides</p>
+                            <h3 className="text-2xl font-bold text-foreground">{inactiveGuides.length}</h3>
+                            <p className="text-xs text-red-500 font-medium">Temporarily disabled</p>
                         </div>
                     </CardContent>
                 </Card>
@@ -321,28 +337,17 @@ export default function Guides() {
                             <Button
                                 variant={activeTab === 'pending' ? 'default' : 'outline'}
                                 onClick={() => setActiveTab('pending')}
-                                className="whitespace-nowrap"
+                                className={`whitespace-nowrap ${activeTab === 'pending' ? 'bg-orange-500 hover:bg-orange-600 text-white' : ''}`}
                             >
                                 Pending
                             </Button>
                             <Button
                                 variant={activeTab === 'inactive' ? 'default' : 'outline'}
                                 onClick={() => setActiveTab('inactive')}
-                                className="whitespace-nowrap"
+                                className={`whitespace-nowrap ${activeTab === 'inactive' ? 'bg-red-500 hover:bg-red-600 text-white' : ''}`}
                             >
                                 Inactive
                             </Button>
-                        </div>
-
-                        <div className="relative flex-1 w-full md:max-w-md">
-                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                            <input
-                                type="text"
-                                placeholder={`Search in ${activeTab === 'all' ? 'all' : activeTab} guides...`}
-                                value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full pl-10 pr-4 py-2.5 bg-muted/50 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-foreground placeholder:text-muted-foreground"
-                            />
                         </div>
                     </div>
                 </CardContent>
@@ -414,6 +419,26 @@ export default function Guides() {
                                         ))}
                                     </div>
                                 </div>
+
+                                {guide.status === 'pending' && (
+                                    <div className="bg-muted/50 p-3 rounded-lg">
+                                        <p className="text-xs font-medium text-foreground mb-2">View documents:</p>
+                                        <ul className="space-y-1.5">
+                                            <li className="text-xs text-muted-foreground flex items-center gap-2 cursor-pointer hover:text-primary transition-colors">
+                                                <FileText className="w-3 h-3" /> ID proof
+                                            </li>
+                                            <li className="text-xs text-muted-foreground flex items-center gap-2 cursor-pointer hover:text-primary transition-colors">
+                                                <FileText className="w-3 h-3" /> Certification
+                                            </li>
+                                            <li className="text-xs text-muted-foreground flex items-center gap-2 cursor-pointer hover:text-primary transition-colors">
+                                                <FileText className="w-3 h-3" /> Experience proof
+                                            </li>
+                                            <li className="text-xs text-muted-foreground flex items-center gap-2 cursor-pointer hover:text-primary transition-colors">
+                                                <FileText className="w-3 h-3" /> Photo + intro script
+                                            </li>
+                                        </ul>
+                                    </div>
+                                )}
 
                                 <div className="pt-4 flex gap-2">
                                     <Button
