@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
     Users,
     UserCheck,
@@ -57,6 +58,8 @@ const destinationData = [
 const COLORS = ['#3b82f6', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981'];
 
 export default function Home() {
+    const navigate = useNavigate();
+
     const stats = [
         {
             title: 'Total Tourists Registered',
@@ -65,6 +68,7 @@ export default function Home() {
             trend: 'up',
             icon: Users,
             color: 'bg-blue-500',
+            path: '/dashboard/tourists'
         },
         {
             title: 'Active Guides',
@@ -73,6 +77,7 @@ export default function Home() {
             trend: 'up',
             icon: UserCheck,
             color: 'bg-green-500',
+            path: '/dashboard/guides'
         },
         {
             title: 'Active Vendors',
@@ -81,6 +86,7 @@ export default function Home() {
             trend: 'up',
             icon: Store,
             color: 'bg-purple-500',
+            path: '/dashboard/vendors'
         },
         {
             title: 'Pending Verifications',
@@ -89,6 +95,7 @@ export default function Home() {
             trend: 'neutral',
             icon: AlertCircle,
             color: 'bg-orange-500',
+            path: '/dashboard/guides'
         },
         {
             title: "Today's SOS Alerts",
@@ -97,6 +104,7 @@ export default function Home() {
             trend: 'down',
             icon: Siren,
             color: 'bg-red-500',
+            path: '/dashboard/sos'
         },
     ];
 
@@ -126,7 +134,11 @@ export default function Home() {
             {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                 {stats.map((stat, index) => (
-                    <Card key={index} className="glass-card hover:shadow-xl transition-all duration-300">
+                    <Card
+                        key={index}
+                        className="glass-card hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105"
+                        onClick={() => navigate(stat.path)}
+                    >
                         <CardContent className="p-6">
                             <div className="flex items-start justify-between">
                                 <div className="flex-1">

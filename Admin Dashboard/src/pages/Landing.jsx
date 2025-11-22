@@ -22,10 +22,10 @@ export default function Landing() {
     const navigate = useNavigate();
 
     return (
-        <div className="min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-100 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+        <div className="min-h-screen flex flex-col font-sans text-slate-800 bg-slate-50 transition-colors duration-300">
 
             {/* Government Header */}
-            <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300">
+            <header className="bg-white border-b border-slate-200 sticky top-0 z-50 transition-colors duration-300">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
                     <div className="flex items-center gap-4">
                         {/* Jharkhand Tourism Logo */}
@@ -37,21 +37,21 @@ export default function Landing() {
                     </div>
 
                     <nav className="hidden md:flex items-center gap-8">
-                        <a href="#" className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">Home</a>
-                        <a href="#" className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">Departments</a>
-                        <a href="#" className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">Services</a>
-                        <a href="#" className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
+                        <a href="#" className="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Home</a>
+                        <a href="#" className="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Departments</a>
+                        <a href="#" className="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Services</a>
+                        <a href="#" className="text-sm font-medium text-slate-600 hover:text-primary transition-colors">Contact</a>
                     </nav>
 
                     <div className="flex items-center gap-4">
-                        <Button variant="outline" size="sm" className="hidden sm:flex gap-2 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">
+                        <Button variant="outline" size="sm" className="hidden sm:flex gap-2 border-slate-300 text-slate-700 hover:bg-slate-50">
                             <HelpCircle className="w-4 h-4" />
                             Helpdesk
                         </Button>
                         <Button
                             size="sm"
                             onClick={() => navigate('/login')}
-                            className="bg-primary hover:bg-primary/90 text-white shadow-md"
+                            className="bg-slate-900 hover:bg-slate-800 text-white shadow-md"
                         >
                             Login
                         </Button>
@@ -102,10 +102,10 @@ export default function Landing() {
             </section>
 
             {/* System Overview */}
-            <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
+            <section className="py-20 bg-white transition-colors duration-300">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-6">About the Admin Platform</h2>
-                    <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <h2 className="text-3xl font-bold text-slate-800 mb-6">About the Admin Platform</h2>
+                    <p className="text-lg text-slate-600 leading-relaxed">
                         This secure admin platform provides centralized control for managing tourism operations,
                         infrastructure data, safety alerts, and public engagement services across regions.
                         Designed for authorized government officials to ensure seamless tourism governance.
@@ -114,56 +114,56 @@ export default function Landing() {
             </section>
 
             {/* Key Government Services */}
-            <section className="py-20 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
+            <section className="py-20 bg-slate-50 border-t border-slate-200 transition-colors duration-300">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-4">Key Government Services</h2>
-                        <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
+                        <h2 className="text-3xl font-bold text-slate-800 mb-4">Key Government Services</h2>
+                        <p className="text-slate-500 max-w-2xl mx-auto">
                             Facilitating efficient public service delivery and operational oversight.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {/* Card 1 */}
-                        <div className="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all group">
-                            <div className="w-14 h-14 bg-blue-50 dark:bg-blue-900/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
-                                <MapPin className="w-7 h-7 text-blue-600 dark:text-blue-400" />
+                        <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                            <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
+                                <MapPin className="w-7 h-7 text-blue-600" />
                             </div>
-                            <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-3">Tourism Governance</h3>
-                            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                            <h3 className="text-lg font-bold text-slate-800 mb-3">Tourism Governance</h3>
+                            <p className="text-slate-500 text-sm leading-relaxed">
                                 Information management for destinations, infrastructure, and public amenities.
                             </p>
                         </div>
 
                         {/* Card 2 */}
-                        <div className="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all group">
-                            <div className="w-14 h-14 bg-red-50 dark:bg-red-900/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-red-100 dark:group-hover:bg-red-900/30 transition-colors">
-                                <AlertTriangle className="w-7 h-7 text-red-600 dark:text-red-400" />
+                        <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                            <div className="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-red-100 transition-colors">
+                                <AlertTriangle className="w-7 h-7 text-red-600" />
                             </div>
-                            <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-3">Public Safety</h3>
-                            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                            <h3 className="text-lg font-bold text-slate-800 mb-3">Public Safety</h3>
+                            <p className="text-slate-500 text-sm leading-relaxed">
                                 Real-time monitoring of emergency SOS alerts and safety protocols.
                             </p>
                         </div>
 
                         {/* Card 3 */}
-                        <div className="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all group">
-                            <div className="w-14 h-14 bg-green-50 dark:bg-green-900/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-green-100 dark:group-hover:bg-green-900/30 transition-colors">
-                                <Phone className="w-7 h-7 text-green-600 dark:text-green-400" />
+                        <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                            <div className="w-14 h-14 bg-green-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-green-100 transition-colors">
+                                <Phone className="w-7 h-7 text-green-600" />
                             </div>
-                            <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-3">Citizen Support</h3>
-                            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                            <h3 className="text-lg font-bold text-slate-800 mb-3">Citizen Support</h3>
+                            <p className="text-slate-500 text-sm leading-relaxed">
                                 Assistance centers, grievance redressal, and tourist helpline services.
                             </p>
                         </div>
 
                         {/* Card 4 */}
-                        <div className="bg-white dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all group">
-                            <div className="w-14 h-14 bg-purple-50 dark:bg-purple-900/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-purple-100 dark:group-hover:bg-purple-900/30 transition-colors">
-                                <FileText className="w-7 h-7 text-purple-600 dark:text-purple-400" />
+                        <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all group">
+                            <div className="w-14 h-14 bg-purple-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-purple-100 transition-colors">
+                                <FileText className="w-7 h-7 text-purple-600" />
                             </div>
-                            <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-3">Documentation</h3>
-                            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                            <h3 className="text-lg font-bold text-slate-800 mb-3">Documentation</h3>
+                            <p className="text-slate-500 text-sm leading-relaxed">
                                 Digital repository for policies, notifications, and official circulars.
                             </p>
                         </div>
@@ -172,7 +172,7 @@ export default function Landing() {
             </section>
 
             {/* Footer */}
-            <footer className="bg-slate-900 dark:bg-black text-slate-400 py-12 border-t border-slate-800 transition-colors duration-300">
+            <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 transition-colors duration-300">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                         <div className="col-span-1 md:col-span-2">
