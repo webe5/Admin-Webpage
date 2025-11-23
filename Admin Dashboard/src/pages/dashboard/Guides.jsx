@@ -219,7 +219,7 @@ export default function Guides() {
         guide.email.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    const totalRegistered = pendingGuides.length + 543 + inactiveGuides.length; // Using 543 as base for approved
+    const totalRegistered = pendingGuides.length + 10 + inactiveGuides.length; // Using 543 as base for approved
 
     const getStatusBadge = (status) => {
         switch (status) {
@@ -239,7 +239,11 @@ export default function Guides() {
                     <p className="text-muted-foreground mt-2">Review and manage guide applications and active guides</p>
                 </div>
                 <div className="flex gap-3">
-                    <Badge variant={activeTab === 'all' ? 'default' : 'outline'} className="text-lg px-4 py-2 cursor-pointer" onClick={() => setActiveTab('all')}>
+                    <Badge
+                        variant={activeTab === 'all' ? 'default' : 'outline'}
+                        className={`text-lg px-4 py-2 cursor-pointer ${activeTab === 'all' ? 'text-black rounded-full font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground border border-input bg-background hover:bg-accent' : ''}`}
+                        onClick={() => setActiveTab('all')}
+                    >
                         Total: {totalRegistered}
                     </Badge>
                 </div>
@@ -273,7 +277,7 @@ export default function Guides() {
                         </div>
                         <div>
                             <p className="text-sm text-muted-foreground">Active Guides</p>
-                            <h3 className="text-2xl font-bold text-foreground">543</h3>
+                            <h3 className="text-2xl font-bold text-foreground">5</h3>
                             <p className="text-xs text-green-500 font-medium flex items-center gap-1">
                                 <span className="inline-block w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                                 +5 new this week
@@ -323,7 +327,7 @@ export default function Guides() {
                             <Button
                                 variant={activeTab === 'all' ? 'default' : 'outline'}
                                 onClick={() => setActiveTab('all')}
-                                className="whitespace-nowrap"
+                                className={`whitespace-nowrap ${activeTab === 'all' ? 'bg-blue-600 hover:bg-blue-700 text-white' : ''}`}
                             >
                                 All Guides
                             </Button>

@@ -72,7 +72,7 @@ export default function Home() {
         },
         {
             title: 'Active Guides',
-            value: '543',
+            value: '5',
             change: '+5 new',
             trend: 'up',
             icon: UserCheck,
