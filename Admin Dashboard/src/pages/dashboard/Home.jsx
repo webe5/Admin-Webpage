@@ -17,6 +17,7 @@ import {
     Plus,
     Send,
     Star,
+    Package,
     IndianRupee,
     Globe
 } from 'lucide-react';
@@ -191,12 +192,12 @@ export default function Home() {
             </div>
 
             {/* Section 2: Operational Metrics */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                 <Card className="glass-card hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105" onClick={() => navigate('/dashboard/guides')}>
                     <CardContent className="p-6">
                         <div className="flex items-center justify-between">
                             <div>
-                                <p className="text-muted-foreground text-sm font-medium mb-1">Active Guides</p>
+                                <p className="text-muted-foreground text-sm font-medium mb-1">Active<br />Guides</p>
                                 <h3 className="text-2xl font-bold text-foreground">5</h3>
                                 <span className="text-sm text-green-500 font-medium">+5 new</span>
                             </div>
@@ -247,6 +248,21 @@ export default function Home() {
                             </div>
                             <div className="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center">
                                 <Siren className="w-6 h-6 text-red-500" />
+                            </div>
+                        </div>
+                    </CardContent>
+                </Card>
+
+                <Card className="glass-card hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105" onClick={() => navigate('/dashboard/marketplace')}>
+                    <CardContent className="p-6">
+                        <div className="flex items-center justify-between">
+                            <div>
+                                <p className="text-muted-foreground text-sm font-medium mb-1">Pending Products</p>
+                                <h3 className="text-2xl font-bold text-foreground">3</h3>
+                                <span className="text-sm text-blue-500 font-medium">Action needed</span>
+                            </div>
+                            <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center">
+                                <Package className="w-6 h-6 text-blue-500" />
                             </div>
                         </div>
                     </CardContent>
