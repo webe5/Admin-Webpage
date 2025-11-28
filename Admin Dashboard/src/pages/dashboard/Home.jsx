@@ -120,17 +120,17 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <Card className="glass-card border-border">
                     <CardContent className="p-6">
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-start justify-between">
                             <div>
-                                <p className="text-muted-foreground text-sm mb-1">Total Tours Completed</p>
+                                <p className="text-muted-foreground text-sm mb-1">Total Tours <br />Completed</p>
                                 <p className="text-3xl font-bold text-foreground">12.5K</p>
                                 <div className="flex items-center gap-1 mt-2">
                                     <CheckCircle className="w-4 h-4 text-green-600" />
                                     <span className="text-sm text-green-600 font-medium">+15.3%</span>
                                 </div>
                             </div>
-                            <div className="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-xl flex items-center justify-center">
-                                <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-400" />
+                            <div className="w-12 h-12 bg-green-100 dark:bg-green-500/10 rounded-xl flex items-center justify-center">
+                                <CheckCircle className="w-6 h-6 text-green-600 " />
                             </div>
                         </div>
                     </CardContent>
@@ -138,7 +138,7 @@ export default function Home() {
 
                 <Card className="glass-card border-border">
                     <CardContent className="p-6">
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-start justify-between">
                             <div>
                                 <p className="text-muted-foreground text-sm mb-1">Total Tourists Registered</p>
                                 <p className="text-3xl font-bold text-foreground">89.2K</p>
@@ -147,8 +147,8 @@ export default function Home() {
                                     <span className="text-sm text-green-600 font-medium">+18.2%</span>
                                 </div>
                             </div>
-                            <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-xl flex items-center justify-center">
-                                <Users className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                            <div className="w-12 h-12 bg-blue-100 dark:bg-blue-500/10 rounded-xl flex items-center justify-center">
+                                <Users className="w-6 h-6 text-blue-600" />
                             </div>
                         </div>
                     </CardContent>
@@ -156,7 +156,7 @@ export default function Home() {
 
                 <Card className="glass-card border-border">
                     <CardContent className="p-6">
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-start justify-between">
                             <div>
                                 <p className="text-muted-foreground text-sm mb-1">Avg. Rating</p>
                                 <p className="text-3xl font-bold text-foreground">4.7</p>
@@ -165,8 +165,8 @@ export default function Home() {
                                     <span className="text-sm text-muted-foreground">Excellent</span>
                                 </div>
                             </div>
-                            <div className="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/20 rounded-xl flex items-center justify-center">
-                                <Star className="w-6 h-6 text-yellow-600 dark:text-yellow-400" />
+                            <div className="w-12 h-12 bg-yellow-100 dark:bg-yellow-500/10 rounded-xl flex items-center justify-center">
+                                <Star className="w-6 h-6 text-yellow-600" />
                             </div>
                         </div>
                     </CardContent>
@@ -174,7 +174,7 @@ export default function Home() {
 
                 <Card className="glass-card border-border">
                     <CardContent className="p-6">
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-start justify-between">
                             <div>
                                 <p className="text-muted-foreground text-sm mb-1">Active Destinations</p>
                                 <p className="text-3xl font-bold text-foreground">156</p>
@@ -183,8 +183,8 @@ export default function Home() {
                                     <span className="text-sm text-muted-foreground">+12 new</span>
                                 </div>
                             </div>
-                            <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-xl flex items-center justify-center">
-                                <MapPin className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                            <div className="w-12 h-12 bg-purple-100 dark:bg-purple-500/10 rounded-xl flex items-center justify-center">
+                                <MapPin className="w-6 h-6 text-purple-600" />
                             </div>
                         </div>
                     </CardContent>
