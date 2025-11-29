@@ -42,7 +42,7 @@ export default function Sidebar() {
     };
 
     return (
-        <aside className="w-64 backdrop-blur-xl border-r border-border h-screen fixed left-0 top-0 overflow-y-auto z-50 hidden md:flex flex-col transition-colors duration-300">
+        <aside className="w-64 bg-white dark:bg-card border-r border-neutral-100 dark:border-border h-screen fixed left-0 top-0 overflow-y-auto z-50 hidden md:flex flex-col transition-colors duration-300">
             <div className="p-6">
                 <h1 className="text-2xl font-bold text-primary flex items-center gap-2">
                     <Map className="w-8 h-8" />
@@ -58,15 +58,22 @@ export default function Sidebar() {
                         end={item.path === '/dashboard'}
                         className={({ isActive }) =>
                             cn(
-                                "flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 group",
+                                "flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 group relative overflow-hidden",
                                 isActive
-                                    ? "bg-primary/15 text-primary font-semibold hover:bg-primary/20"
+                                    ? "bg-primary/10 text-primary font-semibold"
                                     : "text-muted-foreground hover:bg-gray-100"
                             )
                         }
                     >
-                        <item.icon className="w-5 h-5" />
-                        <span className="font-medium">{item.label}</span>
+                        {({ isActive }) => (
+                            <>
+                                <item.icon className="w-5 h-5" />
+                                <span className="font-medium">{item.label}</span>
+                                {isActive && (
+                                    <div className="absolute right-0 top-0 h-full w-1 bg-primary" />
+                                )}
+                            </>
+                        )}
                     </NavLink>
                 ))}
             </nav>

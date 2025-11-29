@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/context/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Loader2, Lock, Mail, ArrowLeft, AlertCircle } from 'lucide-react';
+import jharkhandLogo from '@/assets/jharkhand-tourism-logo.png';
 
 const jharkhandImages = [
   "https://images.unsplash.com/photo-1593693397690-362cb9666c74?q=80&w=2070&auto=format&fit=crop", // Waterfall/Nature
@@ -61,10 +62,12 @@ export default function Login() {
       <div className="w-full md:w-1/2 flex flex-col justify-center p-8 md:p-16 lg:p-24 bg-white relative z-10">
         <div className="max-w-md w-full mx-auto">
           {/* Mini logo / title */}
-          <div className="flex items-center gap-2 mb-8">
-            <div className="h-9 w-9 rounded-xl border border-neutral-400 bg-neutral-50 flex items-center justify-center text-xs font-semibold text-neutral-800">
-              TD
-            </div>
+          <div className="flex items-center gap-3 mb-8">
+            <img
+              src={jharkhandLogo}
+              alt="Jharkhand Tourism"
+              className="h-12 w-auto object-contain"
+            />
             <span className="text-sm font-semibold tracking-wide text-neutral-700">
               Tourism Admin Portal
             </span>
