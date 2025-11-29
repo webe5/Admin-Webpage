@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  /* Government Light Theme - Safe Defaults */
+  --background: 0 0% 100%;
+  /* White */
+  --foreground: 222 47% 11%;
+  /* Dark Navy */
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  /* Primary: Deep Blue */
+  --primary: 215 100% 35%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Secondary: Soft Gray */
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222 47% 11%;
+
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222 47% 11%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 215 100% 35%;
+
+  /* Professional Corporate Theme */
+  --radius: 0.3rem;
+  /* Sharper corners */
+
+  /* Glassmorphism - Disabled for Professional Look */
+  --glass-bg: #ffffff;
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --glass-shadow: rgba(0, 0, 0, 0.05);
+  --glass-input-bg: #f8fafc;
+  /* Slate-50 */
+  --glass-blur: 0px;
+}
+
+.dark {
+  /* Professional Dark Theme */
+  /* Background: Solid Dark Slate */
+  --background: 222.2 47% 11%;
+  /* Slate-900 */
+  --foreground: 210 40% 98%;
+
+  --card: 217.2 32.6% 17.5%;
+  /* Slate-800 */
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222.2 47% 11%;
+  --popover-foreground: 210 40% 98%;
+
+  /* Primary: Lighter Blue for contrast (not neon) */
+  --primary: 217.2 91.2% 59.8%;
+  /* Blue-400 */
+  --primary-foreground: 222.2 47.4% 11.2%;
+
+  /* Secondary: Slate-700 */
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+
+  /* Glassmorphism - Disabled for Professional Look */
+  --glass-bg: #1e293b;
+  /* Solid Slate-800 */
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-shadow: rgba(0, 0, 0, 0.2);
+  --glass-input-bg: #0f172a;
+  /* Slate-900 */
+  --glass-blur: 0px;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 15px -3px var(--glass-shadow);
+}
+
+.glass-card {
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 25px -5px var(--glass-shadow);
+  border-radius: var(--radius);
+}
+
+.glass-input {
+  background-color: var(--glass-input-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.75rem;
+  color: hsl(var(--foreground));
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 2px hsl(var(--ring) / 0.3);
+  /* Increased glow opacity */
+}
